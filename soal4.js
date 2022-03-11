@@ -5,18 +5,19 @@ function isValidPassword (inputPassword) {
     if ( typeof(inputPassword) == 'undefined'){
       return 'Error: Enter your password';
     }
+    if ( typeof(inputPassword) == 'number') {
+      return `False, because ${inputPassword} only consists number`
+    }
     if ( inputPassword.length < 8 && typeof(inputPassword) == 'string'){
-      return 'False, Error: ${password} only consists ${password.length} letters';
+      return `False, Error: ${inputPassword} only consists ${inputPassword.length} letters`;
     }
     if ( inputPassword.match(validPassword) ){
       return 'True';
     }
-    if ( inputPassword.match(noCapsPassword) ){
-      return 'False, because ${inputPassword} has no Caps Letter'
+    if ( inputPassword.match(noCapsPassword)){
+      return `False, because ${inputPassword} has no Caps Letter`
     }
-    if ( typeof(inputPassword) == 'number') {
-      return 'False, because ${password} only consists number'
-    }
+    
   
 }
 
